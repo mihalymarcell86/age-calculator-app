@@ -1,0 +1,1 @@
+- check used font-variants, remove unused font-face declarations
