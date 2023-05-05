@@ -1,12 +1,19 @@
 @use "utilities/global" as *;
 
 .main {
-  background-color: var(--main-bg-color);
+  background-color: var(--clr-bg-main);
   border-radius: rem(24px) rem(24px) rem(100px) rem(24px);
   padding: rem(48px) rem(24px);
   display: flex;
   flex-direction: column;
   gap: rem(32px);
+  margin: auto;
+  @media (min-width: $breakpoint) {
+    max-width: rem(840px);
+    padding: rem(56px);
+    border-bottom-right-radius: rem(200px);
+    gap: 0;
+  }
 }
 
 .input-form {
@@ -16,6 +23,12 @@
   grid-auto-flow: column;
   row-gap: rem(4px);
   column-gap: rem(16px);
+  @media (min-width: $breakpoint) {
+    grid-template-columns: repeat(3, rem(160px));
+    grid-template-rows: min-content rem(72px);
+    row-gap: rem(8px);
+    column-gap: rem(32px);
+  }
   label {
     text-transform: uppercase;
     font-size: rem(12px);
@@ -23,21 +36,35 @@
     font-weight: 700;
     letter-spacing: 0.25em;
     color: var(--clr-label);
+    @media (min-width: $breakpoint) {
+      font-size: rem(14px);
+      line-height: div(21px, 14px);
+    }
   }
   div {
     border: 1px solid var(--clr-border-default);
     border-radius: rem(8px);
     padding: rem(12px) rem(16px);
+    @media (min-width: $breakpoint) {
+      padding-inline: rem(24px);
+    }
   }
   input {
     border: 0;
     font-size: rem(20px);
-    line-height: rem(30px);
-    font-weight: 800;
+    line-height: div(30px, 20px);
+    font-weight: 700;
     letter-spacing: 0.01em;
     color: var(--clr-nr-input);
     appearance: textfield;
     max-width: rem(56px);
+    @media (min-width: $breakpoint) {
+      font-size: rem(32px);
+      line-height: div(48px, 32px);
+    }
+    &::placeholder {
+      color: var(--clr-nr-input-placeholder);
+    }
     &::-webkit-outer-spin-button,
     &::-webkit-inner-spin-button {
       display: none;
@@ -51,11 +78,15 @@
 
 .output {
   font-size: rem(56px);
-  line-height: 1.1;
+  line-height: div(61.6px, 56px);
   letter-spacing: -0.02em;
   font-style: italic;
   font-weight: 800;
   color: var(--clr-text-primary);
+  @media (min-width: $breakpoint) {
+    font-size: rem(104px);
+    line-height: div(114.4px, 104px);
+  }
   span {
     color: var(--clr-text-accent);
   }

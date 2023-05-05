@@ -43,12 +43,13 @@
 }
 
 :root {
-  --body-bg-color: #{$off-white};
-  --main-bg-color: #{$white};
+  --clr-bg-body: #{$off-white};
+  --clr-bg-main: #{$white};
   --clr-label: #{$smokey-grey};
   --clr-accent: #{$purple};
   --clr-separator-line: #{$light-grey};
-  --clr-nr-input: #{color.change($off-black, $alpha: 0.5)};
+  --clr-nr-input-placeholder: #{color.change($off-black, $alpha: 0.5)};
+  --clr-nr-input: #{$off-black};
   --clr-border-default: #{$light-grey};
   --clr-text-primary: #{$off-black};
   --clr-text-accent: #{$purple};
@@ -56,10 +57,13 @@
 
 body {
   font-family: "Poppins";
-  background-color: var(--body-bg-color);
+  background-color: var(--clr-bg-body);
 }
 
 #root {
   min-height: 100dvh;
   padding: div(88, 812) * 100dvh rem(16px) div(238, 812) * 100dvh;
+  @media (min-width: $breakpoint) {
+    padding: div(171, 960) * 100dvh 0 div(109, 960) * 100dvh;
+  }
 }

@@ -25,8 +25,17 @@
   align-items: center;
   z-index: 2;
   cursor: pointer;
+  @media (min-width: $breakpoint) {
+    width: rem(96px);
+    height: rem(96px);
+    margin-left: auto;
+  }
   & > img {
     width: rem(24px);
     height: rem(24px);
+    @media (min-width: $breakpoint) {
+      width: rem(44px);
+      height: rem(44px);
+    }
   }
 }
