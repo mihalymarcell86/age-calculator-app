@@ -1,4 +1,5 @@
 @use "utilities/global" as *;
+@use "sass:color";
 
 @include reset;
 
@@ -41,6 +42,24 @@
   font-style: italic;
 }
 
+:root {
+  --body-bg-color: #{$off-white};
+  --main-bg-color: #{$white};
+  --clr-label: #{$smokey-grey};
+  --clr-accent: #{$purple};
+  --clr-separator-line: #{$light-grey};
+  --clr-nr-input: #{color.change($off-black, $alpha: 0.5)};
+  --clr-border-default: #{$light-grey};
+  --clr-text-primary: #{$off-black};
+  --clr-text-accent: #{$purple};
+}
+
 body {
   font-family: "Poppins";
+  background-color: var(--body-bg-color);
+}
+
+#root {
+  min-height: 100dvh;
+  padding: div(88, 812) * 100dvh rem(16px) div(238, 812) * 100dvh;
 }

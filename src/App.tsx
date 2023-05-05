@@ -1,16 +1,28 @@
+import Separator from "./components/Separator";
+import Attribution from "./components/Attribution";
+
+import styles from "./styles/App.module.scss";
+
 function App() {
   return (
     <>
-      <main>
-        <form>
+      <main className={styles.main}>
+        <form className={styles["input-form"]}>
           <label htmlFor="day">Day</label>
-          <input id="day" type="number" placeholder="DD"></input>
+          <div>
+            <input id="day" type="number" placeholder="DD" />
+          </div>
           <label htmlFor="month">Month</label>
-          <input id="month" type="number" placeholder="MM"></input>
+          <div>
+            <input id="month" type="number" placeholder="MM" />
+          </div>
           <label htmlFor="year">Year</label>
-          <input id="year" type="number" placeholder="YY"></input>
+          <div>
+            <input id="year" type="number" placeholder="YY" />
+          </div>
         </form>
-        <output>
+        <Separator />
+        <output className={styles.output}>
           <p>
             <span>--</span> years
           </p>
@@ -22,25 +34,7 @@ function App() {
           </p>
         </output>
       </main>
-      <footer className="attribution">
-        Challenge by{" "}
-        <a
-          href="https://www.frontendmentor.io?ref=challenge"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Frontend Mentor
-        </a>
-        . Coded by{" "}
-        <a
-          href="https://www.github.io/mihalymarcell86"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Marcell Mihály
-        </a>
-        .
-      </footer>
+      <Attribution />
     </>
   );
 }

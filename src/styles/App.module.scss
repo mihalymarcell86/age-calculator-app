@@ -1,0 +1,62 @@
+@use "utilities/global" as *;
+
+.main {
+  background-color: var(--main-bg-color);
+  border-radius: rem(24px) rem(24px) rem(100px) rem(24px);
+  padding: rem(48px) rem(24px);
+  display: flex;
+  flex-direction: column;
+  gap: rem(32px);
+}
+
+.input-form {
+  display: grid;
+  grid-template-columns: repeat(3, rem(87.67px));
+  grid-template-rows: min-content rem(54px);
+  grid-auto-flow: column;
+  row-gap: rem(4px);
+  column-gap: rem(16px);
+  label {
+    text-transform: uppercase;
+    font-size: rem(12px);
+    line-height: div(18px, 12px);
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    color: var(--clr-label);
+  }
+  div {
+    border: 1px solid var(--clr-border-default);
+    border-radius: rem(8px);
+    padding: rem(12px) rem(16px);
+  }
+  input {
+    border: 0;
+    font-size: rem(20px);
+    line-height: rem(30px);
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    color: var(--clr-nr-input);
+    appearance: textfield;
+    max-width: rem(56px);
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      display: none;
+    }
+    &:focus,
+    &:active {
+      outline: 0;
+    }
+  }
+}
+
+.output {
+  font-size: rem(56px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-style: italic;
+  font-weight: 800;
+  color: var(--clr-text-primary);
+  span {
+    color: var(--clr-text-accent);
+  }
+}

@@ -1,1 +1,4 @@
 - check used font-variants, remove unused font-face declarations
+- display attribution
+- test on mobile for number console on input fields
+- truncate input values to emulate maxlength property

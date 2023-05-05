@@ -1,0 +1,32 @@
+@use "utilities/global" as *;
+
+.separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.separator-line {
+  width: 100%;
+  height: rem(1px);
+  background-color: var(--clr-separator-line);
+  position: absolute;
+}
+
+.separator-circle {
+  background-color: var(--clr-accent);
+  width: rem(64px);
+  height: rem(64px);
+  border: 0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  cursor: pointer;
+  & > img {
+    width: rem(24px);
+    height: rem(24px);
+  }
+}
