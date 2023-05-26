@@ -1,0 +1,91 @@
+@use "utilities/global" as *;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: rem(32px);
+  @media (min-width: $breakpoint) {
+    gap: 0;
+  }
+}
+
+.form-input-group {
+  display: flex;
+  align-items: flex-start;
+  gap: rem(16px);
+  @media (min-width: $breakpoint) {
+    gap: rem(32px);
+  }
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  gap: rem(4px);
+  @media (min-width: $breakpoint) {
+    gap: rem(8px);
+  }
+
+  label {
+    text-transform: uppercase;
+    font-size: rem(12px);
+    line-height: div(18px, 12px);
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    color: var(--clr-label);
+    @media (min-width: $breakpoint) {
+      font-size: rem(14px);
+      line-height: div(21px, 14px);
+    }
+  }
+  input {
+    border: 0;
+    font-size: rem(20px);
+    line-height: div(30px, 20px);
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    color: var(--clr-nr-input);
+    max-width: rem(56px);
+    @media (min-width: $breakpoint) {
+      font-size: rem(32px);
+      line-height: div(48px, 32px);
+      max-width: rem(112px);
+    }
+    &::placeholder {
+      color: var(--clr-nr-input-placeholder);
+    }
+    &:focus,
+    &:active {
+      outline: 0;
+      caret-color: var(--clr-border-active);
+    }
+  }
+}
+
+.input-wrapper {
+  border: 1px solid var(--clr-border-default);
+  border-radius: rem(8px);
+  padding: rem(11px) rem(15px);
+  &:focus-within {
+    border-color: var(--clr-border-active);
+  }
+  @media (min-width: $breakpoint) {
+    padding-inline: rem(23px);
+  }
+}
+
+.input--error {
+  label {
+    color: var(--clr-error);
+  }
+  .input-wrapper {
+    border-color: var(--clr-error);
+  }
+}
+
+.error-message {
+  font-size: rem(14px);
+  line-height: 1.5;
+  font-style: italic;
+  color: var(--clr-error);
+}

@@ -46,13 +46,16 @@
   --clr-bg-body: #{$off-white};
   --clr-bg-main: #{$white};
   --clr-label: #{$smokey-grey};
-  --clr-accent: #{$purple};
+  --clr-button: #{$purple};
+  --clr-button-active: #{$off-black};
   --clr-separator-line: #{$light-grey};
   --clr-nr-input-placeholder: #{color.change($off-black, $alpha: 0.5)};
   --clr-nr-input: #{$off-black};
   --clr-border-default: #{$light-grey};
+  --clr-border-active: #{$purple};
   --clr-text-primary: #{$off-black};
   --clr-text-accent: #{$purple};
+  --clr-error: #{$light-red};
 }
 
 body {

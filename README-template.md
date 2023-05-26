@@ -69,7 +69,7 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### What I learned
 
-I learned, the the `maxlength` attribute only work on `<input type='text'>`. Numerical input values can only be constrained by min/max values, so in this case I had to programmatically truncate the input to control the number of digits entered.
+I learned, that regular expressions only work on `<input type='text'>`. I wanted to stick to `type='number'`, because I was worried about the input console, when displayed on mobile phones. Later, I found the `inputmode` attribute, that controls this aspect (not yet supported by Safari, though).
 
 **Note: Delete this note and the content within this section and replace with your own learnings.**
 

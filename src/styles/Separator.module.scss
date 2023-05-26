@@ -15,7 +15,7 @@
 }
 
 .separator-circle {
-  background-color: var(--clr-accent);
+  background-color: var(--clr-button);
   width: rem(64px);
   height: rem(64px);
   border: 0;
@@ -25,6 +25,7 @@
   align-items: center;
   z-index: 2;
   cursor: pointer;
+  transition: background-color 0.2s ease;
   @media (min-width: $breakpoint) {
     width: rem(96px);
     height: rem(96px);
@@ -37,5 +38,12 @@
       width: rem(44px);
       height: rem(44px);
     }
+  }
+  &:focus,
+  &:active {
+    outline: 0;
+  }
+  &:hover {
+    background-color: var(--clr-button-active);
   }
 }

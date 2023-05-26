@@ -1,38 +1,23 @@
-import Separator from "./components/Separator";
+import BirthdayInput from "./components/BirthdayInput";
+import Output from "./components/Output";
 import Attribution from "./components/Attribution";
 
 import styles from "./styles/App.module.scss";
+
+type InputValue = number | "";
+
+export interface FormInputValues {
+  year: InputValue;
+  month: InputValue;
+  day: InputValue;
+}
 
 function App() {
   return (
     <>
       <main className={styles.main}>
-        <form className={styles["input-form"]}>
-          <label htmlFor="day">Day</label>
-          <div>
-            <input id="day" type="number" placeholder="DD" />
-          </div>
-          <label htmlFor="month">Month</label>
-          <div>
-            <input id="month" type="number" placeholder="MM" />
-          </div>
-          <label htmlFor="year">Year</label>
-          <div>
-            <input id="year" type="number" placeholder="YY" />
-          </div>
-        </form>
-        <Separator />
-        <output className={styles.output}>
-          <p>
-            <span>--</span> years
-          </p>
-          <p>
-            <span>--</span> months
-          </p>
-          <p>
-            <span>--</span> days
-          </p>
-        </output>
+        <BirthdayInput />
+        <Output />
       </main>
       <Attribution />
     </>
