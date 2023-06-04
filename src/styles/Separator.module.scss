@@ -14,7 +14,7 @@
   position: absolute;
 }
 
-.separator-circle {
+.separator-button {
   background-color: var(--clr-button);
   width: rem(64px);
   height: rem(64px);
@@ -45,5 +45,11 @@
   }
   &:hover {
     background-color: var(--clr-button-active);
+  }
+}
+
+.button--error {
+  &:active {
+    background-color: var(--clr-error);
   }
 }

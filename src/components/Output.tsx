@@ -1,16 +1,22 @@
 import styles from "../styles/Output.module.scss";
+import { DisplayStateObjType } from "../App";
 
-function Output() {
+type propType = {
+  displayState: DisplayStateObjType;
+};
+
+function Output({ displayState }: propType) {
+  const { year, month, day } = displayState;
   return (
     <output className={styles.output}>
       <p>
-        <span>--</span> years
+        <span>{year}</span> years
       </p>
       <p>
-        <span>--</span> months
+        <span>{month}</span> months
       </p>
       <p>
-        <span>--</span> days
+        <span>{day}</span> days
       </p>
     </output>
   );
