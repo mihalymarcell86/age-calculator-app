@@ -130,84 +130,39 @@ function BirthdayInput({ dateState, setDateState, setDisplayState }: propType) {
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
       <div className={styles["form-input-group"]}>
-        <div
-          className={`${styles["form-input"]} ${
-            dateState.day.error || fullDateIsInvalid || fullDateIsNotInPast
-              ? styles["input--error"]
-              : ""
-          }`}
-        >
-          <label htmlFor="day">Day</label>
-          <div className={styles["input-wrapper"]}>
-            <input
-              id="day"
-              placeholder="DD"
-              inputMode="numeric"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={dateState.day.value}
-            />
-          </div>
-          {dateState.day.error && (
-            <div className={styles["error-message"]}>{dateState.day.error}</div>
-          )}
-          {(fullDateIsInvalid || fullDateIsNotInPast) && (
-            <div className={styles["error-message"]}>
-              {fullDateIsInvalid
-                ? "Must be a valid date"
-                : "Must be in the past"}
+        {["day", "month", "year"].map((unit) => (
+          <div
+            className={`${styles["form-input"]} ${
+              dateState[unit].error || fullDateIsInvalid || fullDateIsNotInPast
+                ? styles["input--error"]
+                : ""
+            }`}
+            key={unit}
+          >
+            <label htmlFor={unit}>{unit}</label>
+            <div className={styles["input-wrapper"]}>
+              <input
+                id={unit}
+                placeholder={`${unit[0]}${unit[0]}`}
+                inputMode="numeric"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={dateState[unit].value}
+              />
             </div>
-          )}
-        </div>
-        <div
-          className={`${styles["form-input"]} ${
-            dateState.month.error || fullDateIsInvalid || fullDateIsNotInPast
-              ? styles["input--error"]
-              : ""
-          }`}
-        >
-          <label htmlFor="month">Month</label>
-          <div className={styles["input-wrapper"]}>
-            <input
-              id="month"
-              placeholder="MM"
-              inputMode="numeric"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={dateState.month.value}
-            />
+            {dateState[unit].error && (
+              <div className={styles["error-message"]}>
+                {dateState[unit].error}
+              </div>
+            )}
           </div>
-          {dateState.month.error && (
-            <div className={styles["error-message"]}>
-              {dateState.month.error}
-            </div>
-          )}
-        </div>
-        <div
-          className={`${styles["form-input"]} ${
-            dateState.year.error || fullDateIsInvalid || fullDateIsNotInPast
-              ? styles["input--error"]
-              : ""
-          }`}
-        >
-          <label htmlFor="year">Year</label>
-          <div className={styles["input-wrapper"]}>
-            <input
-              id="year"
-              placeholder="YY"
-              inputMode="numeric"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={dateState.year.value}
-            />
-          </div>
-          {dateState.year.error && (
-            <div className={styles["error-message"]}>
-              {dateState.year.error}
-            </div>
-          )}
-        </div>
+        ))}
       </div>
+      {(fullDateIsInvalid || fullDateIsNotInPast) && (
+        <div className={styles["error-message"]}>
+          {fullDateIsInvalid ? "Must be a valid date" : "Must be in the past"}
+        </div>
+      )}
       <SubmitButton dateIsValid={formIsValid} />
     </form>
   );

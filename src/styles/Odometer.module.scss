@@ -1,0 +1,16 @@
+@use "utilities/global" as *;
+
+.odometer {
+  margin-right: rem(9px);
+  display: flex;
+}
+
+.olist {
+  height: rem(114.4px);
+  overflow: hidden;
+  & > span {
+    display: block;
+    width: fit-content;
+    translate: rem(-5px);
+  }
+}

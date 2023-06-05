@@ -14,4 +14,7 @@
   span {
     color: var(--clr-text-accent);
   }
+  & > div {
+    display: flex;
+  }
 }

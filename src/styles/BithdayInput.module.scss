@@ -21,10 +21,6 @@
 .form-input {
   display: flex;
   flex-direction: column;
-  gap: rem(4px);
-  @media (min-width: $breakpoint) {
-    gap: rem(8px);
-  }
 
   label {
     text-transform: uppercase;
@@ -33,9 +29,11 @@
     font-weight: 700;
     letter-spacing: 0.25em;
     color: var(--clr-label);
+    margin-bottom: rem(4px);
     @media (min-width: $breakpoint) {
       font-size: rem(14px);
       line-height: div(21px, 14px);
+      margin-bottom: rem(8px);
     }
   }
   input {
@@ -53,6 +51,7 @@
     }
     &::placeholder {
       color: var(--clr-nr-input-placeholder);
+      text-transform: uppercase;
     }
     &:focus,
     &:active {
@@ -66,11 +65,13 @@
   border: 1px solid var(--clr-border-default);
   border-radius: rem(8px);
   padding: rem(11px) rem(15px);
+  margin-bottom: rem(4px);
   &:focus-within {
     border-color: var(--clr-border-active);
   }
   @media (min-width: $breakpoint) {
     padding-inline: rem(23px);
+    margin-bottom: rem(8px);
   }
 }
 
