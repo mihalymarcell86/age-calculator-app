@@ -2,7 +2,7 @@ import styles from "../styles/Attribution.module.scss";
 
 function Attribution() {
   return (
-    <footer className={styles.attribution} hidden>
+    <footer className={styles.attribution}>
       Challenge by{" "}
       <a
         href="https://www.frontendmentor.io?ref=challenge"
