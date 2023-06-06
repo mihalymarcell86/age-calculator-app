@@ -13,7 +13,6 @@
   & > span {
     display: block;
     width: fit-content;
-    // scroll-snap-align: center;
   }
   @media (min-width: $breakpoint) {
     height: rem(114.4px);

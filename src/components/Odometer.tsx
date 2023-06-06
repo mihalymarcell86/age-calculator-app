@@ -8,7 +8,6 @@ type propType = {
 
 const Odometer = memo(function Odometer({ number }: propType) {
   const numString = number.toString();
-  console.log(numString[0]);
   const digitIDs: string[] = [];
   for (let i = 0; i < numString.length; i++) digitIDs[i] = nanoid();
 
@@ -20,9 +19,8 @@ const Odometer = memo(function Odometer({ number }: propType) {
           numString[index] === "-" ? 1 : +numString[index] + 2
         })`
       ) as HTMLSpanElement;
-      const spanOffset = span.offsetTop;
       if (digit) digit.style.width = span?.offsetWidth + 4 + "px";
-      digit?.scrollTo(0, spanOffset);
+      digit?.scrollTo(0, span.offsetTop);
     });
   });
 

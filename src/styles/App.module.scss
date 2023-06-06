@@ -8,6 +8,7 @@
   flex-direction: column;
   gap: rem(32px);
   margin: auto;
+  max-width: rem(500px);
   @media (min-width: $breakpoint) {
     max-width: rem(840px);
     padding: rem(56px);
