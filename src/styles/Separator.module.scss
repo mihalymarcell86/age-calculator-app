@@ -5,6 +5,10 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  margin-top: rem(32px);
+  @media (min-width: $breakpoint) {
+    margin-top: 0;
+  }
 }
 
 .separator-line {

@@ -8,6 +8,7 @@ type propType = {
 
 function Output({ displayState }: propType) {
   const { year, month, day } = displayState;
+
   return (
     <output className={styles.output}>
       <div>

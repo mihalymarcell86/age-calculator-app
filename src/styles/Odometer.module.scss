@@ -6,11 +6,16 @@
 }
 
 .olist {
-  height: rem(114.4px);
+  height: rem(62px);
   overflow: hidden;
+  scroll-behavior: smooth;
+  position: relative;
   & > span {
     display: block;
     width: fit-content;
-    translate: rem(-5px);
+    // scroll-snap-align: center;
+  }
+  @media (min-width: $breakpoint) {
+    height: rem(114.4px);
   }
 }

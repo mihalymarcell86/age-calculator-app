@@ -3,9 +3,9 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: rem(32px);
+  // gap: rem(32px);
   @media (min-width: $breakpoint) {
-    gap: 0;
+    // gap: 0;
   }
 }
 

@@ -8,29 +8,29 @@ type propType = {
 
 const Odometer = memo(function Odometer({ number }: propType) {
   const numString = number.toString();
+  console.log(numString[0]);
   const digitIDs: string[] = [];
+  for (let i = 0; i < numString.length; i++) digitIDs[i] = nanoid();
 
   useEffect(() => {
     const digits = digitIDs.map((digit) => document.getElementById(digit));
     digits.forEach((digit, index) => {
       const span = digit?.querySelector(
         `span:nth-child(${
-          numString[index] === "-" ? 0 : +numString[index] + 2
+          numString[index] === "-" ? 1 : +numString[index] + 2
         })`
       ) as HTMLSpanElement;
-      if (digit) digit.style.width = span?.offsetWidth + "px";
-      span?.scrollIntoView({ behavior: "smooth" });
+      const spanOffset = span.offsetTop;
+      if (digit) digit.style.width = span?.offsetWidth + 4 + "px";
+      digit?.scrollTo(0, spanOffset);
     });
   });
 
   return (
     <div className={styles.odometer}>
-      {[...numString].map((digits) => {
-        const id = nanoid();
-        digitIDs.push(id);
-
+      {digitIDs.map((id) => {
         return (
-          <div className={styles.olist} id={id} key={id}>
+          <div className={`${styles.olist}`} id={id} key={id}>
             <span>-</span>
             <span>0</span>
             <span>1</span>
