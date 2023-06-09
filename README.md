@@ -34,17 +34,17 @@ Users should be able to:
 
 Desktop
 
-![](./desktop-empty.png)
+![](./screenshots/desktop-empty.png)
 
-![](./desktop-working.png)
+![](./screenshots/desktop-working.png)
 
-![](./desktop-error.png)
+![](./screenshots/desktop-error.png)
 
 ---
 
 Mobile
 
-![](./mobile-error.png)
+![](./screenshots/mobile-error.png)
 
 ### Links
 
