@@ -143,7 +143,9 @@ function BirthdayInput({ dateState, setDateState, setDisplayState }: propType) {
             <div className={styles["input-wrapper"]}>
               <input
                 id={unit}
-                placeholder={`${unit[0]}${unit[0]}`}
+                placeholder={`${unit[0]}${unit[0]}${
+                  unit === "year" ? `${unit[0]}${unit[0]}` : ""
+                }`}
                 inputMode="numeric"
                 onChange={handleChange}
                 onBlur={handleBlur}

@@ -10,7 +10,7 @@ function Output({ displayState }: propType) {
   const { year, month, day } = displayState;
 
   return (
-    <output className={styles.output}>
+    <div className={styles.output}>
       <div>
         <Odometer number={year} /> years
       </div>
@@ -20,7 +20,7 @@ function Output({ displayState }: propType) {
       <div>
         <Odometer number={day} /> days
       </div>
-    </output>
+    </div>
   );
 }
 
